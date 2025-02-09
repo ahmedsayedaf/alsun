@@ -31,6 +31,12 @@ function updateCountdown() {
 // Update the countdown every second
 const interval = setInterval(updateCountdown, 1000);
 updateCountdown(); // Initial call to avoid delay
+// Check for saved theme in localStorage
+if (localStorage.getItem("dark-mode") === "enabled") {
+  document.body.classList.add("dark-mode");
+  darkModeSwitch.checked = true;
+}
+
 // Toggle dark mode
 darkModeSwitch.addEventListener("change", () => {
   document.body.classList.toggle("dark-mode");
