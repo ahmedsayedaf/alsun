@@ -31,3 +31,23 @@ function updateCountdown() {
 // Update the countdown every second
 const interval = setInterval(updateCountdown, 1000);
 updateCountdown(); // Initial call to avoid delay
+console.log("Script loaded!"); // Add this at the top of script.js
+
+const darkModeSwitch = document.getElementById("dark-mode-switch");
+
+// Check for saved theme in localStorage
+if (localStorage.getItem("dark-mode") === "enabled") {
+  document.body.classList.add("dark-mode");
+  darkModeSwitch.checked = true;
+}
+
+// Toggle dark mode
+darkModeSwitch.addEventListener("change", () => {
+  console.log("Toggle clicked!"); // Add this to verify the event listener works
+  document.body.classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("dark-mode", "enabled");
+  } else {
+    localStorage.setItem("dark-mode", "disabled");
+  }
+});
