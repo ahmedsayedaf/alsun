@@ -1,0 +1,295 @@
+/* styles.css */
+:root {
+    --background-light: linear-gradient(135deg, #1e3c72, #2a5298);
+    --background-dark: linear-gradient(135deg, #0f2027, #203a43);
+    --text-light: white;
+    --text-dark: #e0e0e0;
+    --container-bg-light: rgba(0, 0, 0, 0.5);
+    --container-bg-dark: rgba(255, 255, 255, 0.1);
+    --box-bg-light: rgba(255, 255, 255, 0.1);
+    --box-bg-dark: rgba(0, 0, 0, 0.3);
+    --box-shadow-light: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --box-shadow-dark: 0 5px 15px rgba(255, 255, 255, 0.1);
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Times New Roman', serif;
+    background: var(--background-light);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background 0.5s, color 0.5s;
+  }
+  
+  body.dark-mode {
+    background: var(--background-dark);
+    color: var(--text-dark);
+  }
+  
+  /* Dark Mode Toggle */
+  .dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .toggle-label {
+    display: block;
+    width: 60px;
+    height: 30px;
+    background: #ccc;
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .toggle-label::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  #dark-mode-switch:checked + .toggle-label {
+    background: #4caf50;
+  }
+  
+  #dark-mode-switch:checked + .toggle-label::after {
+    transform: translateX(30px);
+  }
+  
+  #dark-mode-switch {
+    display: none;
+  }
+  
+  /* SVG Background */
+  .svg-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .svg-background svg {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    animation: float 10s infinite ease-in-out;
+  }
+  
+  .svg-background svg:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-duration: 8s;
+  }
+  
+  .svg-background svg:nth-child(2) {
+    top: 70%;
+    left: 80%;
+    animation-duration: 12s;
+  }
+  
+  .svg-background svg:nth-child(3) {
+    top: 50%;
+    left: 50%;
+    animation-duration: 15s;
+  }
+  
+  /* Countdown Container */
+  .countdown-container {
+    text-align: center;
+    background: var(--container-bg-light);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow-light);
+    z-index: 1;
+    transition: background 0.5s, box-shadow 0.5s;
+  }
+  
+  body.dark-mode .countdown-container {
+    background: var(--container-bg-dark);
+    box-shadow: var(--box-shadow-dark);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+    font-style: italic;
+  }
+  
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .time-box {
+    background: var(--box-bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100px;
+    box-shadow: var(--box-shadow-light);
+    animation: float 3s infinite ease-in-out;
+    transition: background 0.5s, box-shadow 0.5s;
+  }
+  
+  body.dark-mode .time-box {
+    background: var(--box-bg-dark);
+    box-shadow: var(--box-shadow-dark);
+  }
+  
+  .time-box span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .time-box .label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+/* styles.css */
+/* Previous CSS remains the same */
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+  }
+  
+  footer .author-name {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .social-links {
+    margin-top: 10px;
+  }
+  
+  .social-links a {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: white;
+  }
+  
+  /* Dark Mode Footer Styles */
+  body.dark-mode footer {
+    color: rgba(224, 224, 224, 0.8);
+  }
+  
+  body.dark-mode footer .author-name {
+    color: #e0e0e0;
+  }
+  
+  body.dark-mode .social-links a {
+    color: rgba(224, 224, 224, 0.8);
+  }
+  
+  body.dark-mode .social-links a:hover {
+    color: white;
+  }
+  /* styles.css */
+/* Previous CSS remains the same */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+      font-size: 2rem; /* Smaller heading for mobile */
+    }
+  
+    .countdown {
+      flex-direction: column; /* Stack time boxes vertically */
+      gap: 10px; /* Reduce gap between boxes */
+    }
+  
+    .time-box {
+      width: 80%; /* Wider boxes for better touch interaction */
+      padding: 15px;
+    }
+  
+    .time-box span {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+  
+    .time-box .label {
+      font-size: 0.9rem; /* Smaller label font size */
+    }
+  
+    footer {
+      font-size: 0.8rem; /* Smaller footer text */
+    }
+  
+    .social-links a {
+      font-size: 1rem; /* Smaller social icons */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem; /* Even smaller heading for very small screens */
+    }
+  
+    .time-box {
+      width: 90%; /* Wider boxes for very small screens */
+    }
+  
+    .time-box span {
+      font-size: 1.2rem; /* Smaller font size */
+    }
+  
+    .time-box .label {
+      font-size: 0.8rem; /* Smaller label font size */
+    }
+  
+    footer {
+      font-size: 0.7rem; /* Smaller footer text */
+    }
+  
+    .social-links a {
+      font-size: 0.9rem; /* Smaller social icons */
+    }
+  }
