@@ -1,19 +1,3 @@
-// Check for saved theme in localStorage
-if (localStorage.getItem("dark-mode") === "enabled") {
-  document.body.classList.add("dark-mode");
-  darkModeSwitch.checked = true;
-}
-
-// Toggle dark mode
-darkModeSwitch.addEventListener("change", () => {
-  document.body.classList.toggle("dark-mode");
-  if (document.body.classList.contains("dark-mode")) {
-    localStorage.setItem("dark-mode", "enabled");
-  } else {
-    localStorage.setItem("dark-mode", "disabled");
-  }
-});
-
 // Set the target date and time in Cairo time zone (UTC+2)
 const targetDate = new Date("June 22, 2025 00:00:00 GMT+0200").getTime();
 
