@@ -293,3 +293,34 @@ footer {
       font-size: 0.9rem; /* Smaller social icons */
     }
   }
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #121212; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+body.dark-mode .countdown-container {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent dark container */
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Light shadow */
+}
+
+body.dark-mode .time-box {
+  background: rgba(0, 0, 0, 0.3); /* Darker boxes */
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1); /* Light shadow */
+}
+
+body.dark-mode footer {
+  color: rgba(224, 224, 224, 0.8); /* Light footer text */
+}
+
+body.dark-mode footer .author-name {
+  color: #e0e0e0; /* Light author name */
+}
+
+body.dark-mode .social-links a {
+  color: rgba(224, 224, 224, 0.8); /* Light social icons */
+}
+
+body.dark-mode .social-links a:hover {
+  color: white; /* White social icons on hover */
+}
