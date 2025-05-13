@@ -1,5 +1,5 @@
 // Set the target date and time in Cairo time zone (UTC+2)
-const targetDate = new Date("June 22, 2025 00:00:00 GMT+0200").getTime();
+const targetDate = new Date("June 19, 2025 14:00:00 GMT+0200").getTime();
 
 function updateCountdown() {
   // Get the current time in Cairo time zone (UTC+2)
